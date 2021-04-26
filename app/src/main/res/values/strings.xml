@@ -2,4 +2,8 @@
     <string name="app_name">PruebaKAVAK</string>
     <string name="search">Buscar</string>
     <string name="loading">Loading...</string>
+    <string name="btn_acept">Aceptar</string>
+    <string name="wait">Por favor, espere...</string>
+    <string name="loading_information">Cargando información..</string>
+    <string name="msg_error">UPS! Error</string>
 </resources>

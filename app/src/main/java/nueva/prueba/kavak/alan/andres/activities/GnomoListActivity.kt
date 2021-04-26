@@ -72,12 +72,14 @@ class GnomoListActivity : AppCompatActivity() {
 
                 override fun afterTextChanged(p0: Editable?) {}
             })
+
+            btnAceptMsg.setOnClickListener { pgdMsgError.visibility = View.GONE }
         }
     }
 
     override fun onResume() {
         super.onResume()
-
+        binding.pgdEspera.visibility = View.VISIBLE
         parseJSON()
     }
 
@@ -92,8 +94,17 @@ class GnomoListActivity : AppCompatActivity() {
 
                 gnomoSearch.clear()
                 gnomoSearch.addAll(result.gnomoList)
+
+                binding.pgdEspera.visibility = View.GONE
             },
-                { error -> Toast.makeText(this, error.message, Toast.LENGTH_SHORT).show() })
+                { error -> Toast.makeText(this, error.message, Toast.LENGTH_SHORT).show()
+                    with(binding){
+
+                        txtMsg.text = error.message
+                        pgdEspera.visibility = View.GONE
+                        pgdMsgError.visibility = View.VISIBLE
+                    }
+                })
     }
 
     fun Activity.hideKeyBoard() = hideKeyBoard(currentFocus ?: View(this))

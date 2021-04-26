@@ -14,5 +14,6 @@
     <color name="blueSecundary">#9EBCFF</color>
     <color name="blueSeVariant">#6C8CCC</color>
     <color name="blueSecOnPrimary">#84B3FF</color>
+    <color name="colorWhiteShadow">#BEFFFFFF</color>
 
 </resources>
