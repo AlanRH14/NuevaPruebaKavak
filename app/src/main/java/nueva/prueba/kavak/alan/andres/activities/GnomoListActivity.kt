@@ -2,6 +2,7 @@ package nueva.prueba.kavak.alan.andres.activities
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -38,7 +39,9 @@ class GnomoListActivity : AppCompatActivity() {
 
             gnomoAdapter = object : GnomoAdapter(this@GnomoListActivity, gnomoList) {
                 override fun getDataGnomo(gnomo: Brastlewark) {
-
+                    val intent = Intent(this@GnomoListActivity, GnomoDetailActivity::class.java)
+                    intent.putExtra("gnomo", gnomo)
+                    startActivity(intent)
                 }
             }
 
