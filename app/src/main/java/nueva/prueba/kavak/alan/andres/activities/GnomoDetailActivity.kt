@@ -73,7 +73,7 @@ class GnomoDetailActivity : AppCompatActivity() {
                 .into(imgGnomo)*/
 
             Picasso.get().load(gnomo.thumbnailGnomo)
-                .error(R.drawable.ic_gnomo).resize(120, 120).into(imgGnomo)
+                .error(R.drawable.ic_gnomo).into(imgGnomo)
 
             txtIDGnomo.text = "ID: ${gnomo.idGnomo}"
             txtNameGnomo.text = gnomo.nameGnomo
